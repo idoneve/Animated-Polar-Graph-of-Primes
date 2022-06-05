@@ -10,13 +10,13 @@ def is_prime(n):
         if n % i == 0: return False
     return True
 
-primes, x = [i for i in range(0, 10000) if is_prime(i)], []
+primes, x = [i for i in range(0, 100000) if is_prime(i)], []
 def animate(i):
     x.append(primes[i])
     ax.clear()
-    plt.polar(x, 'o', markersize=5)
+    plt.polar(x, 'o', markersize=2)
 
-anim = animation.FuncAnimation(fig, animate, frames=len(primes), interval=5, repeat=False)
+anim = animation.FuncAnimation(fig, animate, frames=len(primes), interval=1, repeat=False)
 
 plt.grid()
 plt.show()
